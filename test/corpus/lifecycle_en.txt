@@ -1,0 +1,92 @@
+==================
+Lifecycle before scenario with scope
+==================
+Lifecycle:
+Before:
+Scope: SCENARIO
+Given a precondition
+Given another precondition
+
+Scenario: A scenario
+Given a step
+
+---
+
+(source_file
+  (lifecycle
+    (lifecycle_kw)
+    (lifecycle_section
+      (before_kw)
+      (lifecycle_scope
+        (scope_kw)
+        (title))
+      (step
+        (step_keyword (given_kw))
+        (step_text (step_text_fragment)))
+      (step
+        (step_keyword (given_kw))
+        (step_text (step_text_fragment)))))
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (step
+      (step_keyword (given_kw))
+      (step_text (step_text_fragment)))))
+
+==================
+Lifecycle before scenario without scope
+==================
+Lifecycle:
+Before:
+Given default settings with an extra feature enabled
+
+Scenario: first
+Given a step
+
+---
+
+(source_file
+  (lifecycle
+    (lifecycle_kw)
+    (lifecycle_section
+      (before_kw)
+      (step
+        (step_keyword (given_kw))
+        (step_text (step_text_fragment)))))
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (step
+      (step_keyword (given_kw))
+      (step_text (step_text_fragment)))))
+
+==================
+Lifecycle at start of file without narrative
+==================
+Lifecycle:
+Before:
+Scope: STORY
+Given a story level precondition
+
+Scenario: first
+Given a step
+
+---
+
+(source_file
+  (lifecycle
+    (lifecycle_kw)
+    (lifecycle_section
+      (before_kw)
+      (lifecycle_scope
+        (scope_kw)
+        (title))
+      (step
+        (step_keyword (given_kw))
+        (step_text (step_text_fragment)))))
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (step
+      (step_keyword (given_kw))
+      (step_text (step_text_fragment)))))

@@ -1,0 +1,42 @@
+==================
+Narrative only
+==================
+Narrative:
+As a user
+I want to test narrative-only files
+So that the grammar handles this case
+
+---
+
+(source_file
+  (narrative
+    (narrative_kw)
+    (free_text
+      (free_text_line)
+      (free_text_line)
+      (free_text_line))))
+
+==================
+Keywordless narrative (no Narrative: header)
+==================
+För att kunna utveckla bättre produkter
+I egenskap av Företag
+så vill Företag kunna höja priset på sina produkter
+
+Scenario: real scenario
+Given a precondition
+
+---
+
+(source_file
+  (narrative
+    (title)
+    (free_text
+      (free_text_line)
+      (free_text_line)))
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (step
+      (step_keyword (given_kw))
+      (step_text (step_text_fragment)))))

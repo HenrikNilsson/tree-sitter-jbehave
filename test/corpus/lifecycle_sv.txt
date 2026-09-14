@@ -1,0 +1,34 @@
+==================
+Swedish lifecycle with before
+==================
+Livscykel:
+Innan:
+Omfattning: SCENARIO
+Givet en förutsättning
+Givet en till förutsättning
+
+Scenario: Ett scenario
+Givet ett steg
+
+---
+
+(source_file
+  (lifecycle
+    (lifecycle_kw)
+    (lifecycle_section
+      (before_kw)
+      (lifecycle_scope
+        (scope_kw)
+        (title))
+      (step
+        (step_keyword (given_kw))
+        (step_text (step_text_fragment)))
+      (step
+        (step_keyword (given_kw))
+        (step_text (step_text_fragment)))))
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (step
+      (step_keyword (given_kw))
+      (step_text (step_text_fragment)))))

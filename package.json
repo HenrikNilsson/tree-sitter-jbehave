@@ -1,0 +1,8 @@
+{
+  "name": "tree-sitter-jbehave",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "tree-sitter-cli": "^0.26.11"
+  }
+}

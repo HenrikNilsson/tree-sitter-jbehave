@@ -1,0 +1,32 @@
+==================
+Examples table
+==================
+Scenario: with examples
+Given a $status status
+
+Examples:
+|status|expected|
+|active|$outcome|
+|inactive|done|
+
+---
+
+(source_file
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (step
+      (step_keyword (given_kw))
+      (step_text (step_text_fragment) (parameter) (step_text_fragment)))
+    (examples
+      (examples_kw)
+      (examples_table
+        (table_row
+          (table_cell (table_cell_fragment))
+          (table_cell (table_cell_fragment)))
+        (table_row
+          (table_cell (table_cell_fragment))
+          (table_cell (parameter)))
+        (table_row
+          (table_cell (table_cell_fragment))
+          (table_cell (table_cell_fragment)))))))

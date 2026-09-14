@@ -1,0 +1,27 @@
+==================
+Step followed directly by a data table (no Examples: keyword)
+==================
+Scenario: step-level table
+Given an order with the following products:
+|Name|Quantity|
+|Widget|2|
+When something happens
+
+---
+
+(source_file
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (step
+      (step_keyword (given_kw))
+      (step_text (step_text_fragment))
+      (table_row
+        (table_cell (table_cell_fragment))
+        (table_cell (table_cell_fragment)))
+      (table_row
+        (table_cell (table_cell_fragment))
+        (table_cell (table_cell_fragment))))
+    (step
+      (step_keyword (when_kw))
+      (step_text (step_text_fragment)))))

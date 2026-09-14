@@ -1,0 +1,23 @@
+==================
+GivenStories with multiple refs
+==================
+GivenStories: foo.story, bar.story, baz.story
+
+Scenario: dummy
+Given a step
+
+---
+
+(source_file
+  (given_stories
+    (given_stories_kw)
+    (story_ref_list
+      (story_ref)
+      (story_ref)
+      (story_ref)))
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (step
+      (step_keyword (given_kw))
+      (step_text (step_text_fragment)))))

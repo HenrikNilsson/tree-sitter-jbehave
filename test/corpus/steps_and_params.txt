@@ -1,0 +1,24 @@
+==================
+Steps with parameters
+==================
+Scenario: parametrized
+Given a $thing exists
+When I use $thing and $other
+Then the result is $result
+
+---
+
+(source_file
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (step
+      (step_keyword (given_kw))
+      (step_text (step_text_fragment) (parameter) (step_text_fragment)))
+    (step
+      (step_keyword (when_kw))
+      (step_text
+        (step_text_fragment) (parameter) (step_text_fragment) (parameter)))
+    (step
+      (step_keyword (then_kw))
+      (step_text (step_text_fragment) (parameter)))))

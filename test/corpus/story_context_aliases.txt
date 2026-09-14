@@ -1,0 +1,89 @@
+==================
+Story alias with inline title and body
+==================
+!-- language: sv
+
+Story: ST-234 - Ett scenario om drycker
+För att kunna visa en meny med drycker
+
+Scenario: dummy
+Given a step
+
+---
+
+(source_file
+  (comment)
+  (narrative
+    (narrative_kw)
+    (title)
+    (free_text
+      (free_text_line)))
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (step
+      (step_keyword (given_kw))
+      (step_text (step_text_fragment)))))
+
+==================
+Multiple Story and Context blocks
+==================
+Story: ST-114
+För att minimera administrationskostnader
+
+Story: ST-191
+För att slippa göra om samma arbete
+
+Context: ST-736
+För att kunna ta emot beställningar
+
+Scenario: dummy
+Given a step
+
+---
+
+(source_file
+  (narrative
+    (narrative_kw)
+    (title)
+    (free_text
+      (free_text_line)))
+  (narrative
+    (narrative_kw)
+    (title)
+    (free_text
+      (free_text_line)))
+  (narrative
+    (narrative_kw)
+    (title)
+    (free_text
+      (free_text_line)))
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (step
+      (step_keyword (given_kw))
+      (step_text (step_text_fragment)))))
+
+==================
+Context alias with no inline title
+==================
+Context:
+Mark items as reviewed after the order has been placed
+
+Scenario: dummy
+Given a step
+
+---
+
+(source_file
+  (narrative
+    (narrative_kw)
+    (free_text
+      (free_text_line)))
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (step
+      (step_keyword (given_kw))
+      (step_text (step_text_fragment)))))

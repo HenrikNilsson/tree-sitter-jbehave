@@ -1,0 +1,51 @@
+==================
+Single-letter And word as continuation line
+==================
+Scenario: s
+Given an order was placed
+I insist this continues the step
+When something happens
+
+---
+
+(source_file
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (step
+      (step_keyword (given_kw))
+      (step_text (step_text_fragment)))
+    (step
+      (step_keyword (and_kw))
+      (step_text (step_text_fragment)))
+    (step
+      (step_keyword (when_kw))
+      (step_text (step_text_fragment)))))
+
+==================
+Single-letter And words from other locales
+==================
+Scenario: s
+Given an order was placed
+E extra details continuing the step
+Y more details continuing the step
+When something happens
+
+---
+
+(source_file
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (step
+      (step_keyword (given_kw))
+      (step_text (step_text_fragment)))
+    (step
+      (step_keyword (and_kw))
+      (step_text (step_text_fragment)))
+    (step
+      (step_keyword (and_kw))
+      (step_text (step_text_fragment)))
+    (step
+      (step_keyword (when_kw))
+      (step_text (step_text_fragment)))))

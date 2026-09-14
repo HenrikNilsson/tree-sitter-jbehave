@@ -1,0 +1,23 @@
+==================
+And steps
+==================
+Scenario: multiple ands
+Given a precondition
+And another precondition
+When an action happens
+And another action happens
+Then an outcome occurs
+And another outcome occurs
+
+---
+
+(source_file
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (step (step_keyword (given_kw)) (step_text (step_text_fragment)))
+    (step (step_keyword (and_kw)) (step_text (step_text_fragment)))
+    (step (step_keyword (when_kw)) (step_text (step_text_fragment)))
+    (step (step_keyword (and_kw)) (step_text (step_text_fragment)))
+    (step (step_keyword (then_kw)) (step_text (step_text_fragment)))
+    (step (step_keyword (and_kw)) (step_text (step_text_fragment)))))

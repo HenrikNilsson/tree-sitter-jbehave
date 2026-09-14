@@ -1,0 +1,19 @@
+{
+  "grammars": [
+    {
+      "name": "jbehave",
+      "camelcase": "Jbehave",
+      "scope": "source.jbehave",
+      "path": ".",
+      "file-types": [
+        "story"
+      ],
+      "highlights": "queries/highlights.scm"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "JBehave (.story) grammar for tree-sitter"
+  }
+}

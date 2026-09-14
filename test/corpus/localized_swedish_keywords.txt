@@ -1,0 +1,24 @@
+==================
+Swedish (localized) keywords
+==================
+Sammanhang: En berättelse om en hjälte
+
+Scenario: Svenskt scenario
+Givet ett förutsättning
+När en händelse inträffar
+Så ska något hända
+Och något mer händer
+
+---
+
+(source_file
+  (narrative
+    (narrative_kw)
+    (title))
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (step (step_keyword (given_kw)) (step_text (step_text_fragment)))
+    (step (step_keyword (when_kw)) (step_text (step_text_fragment)))
+    (step (step_keyword (then_kw)) (step_text (step_text_fragment)))
+    (step (step_keyword (and_kw)) (step_text (step_text_fragment)))))

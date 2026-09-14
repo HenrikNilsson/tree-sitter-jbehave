@@ -1,0 +1,21 @@
+==================
+Step with an unkeyworded continuation line
+==================
+Scenario: continuation
+Given an order was placed
+och with extra details that continue on this line
+When something happens
+
+---
+
+(source_file
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (step
+      (step_keyword (given_kw))
+      (step_text (step_text_fragment))
+      (step_continuation_line (continuation_text)))
+    (step
+      (step_keyword (when_kw))
+      (step_text (step_text_fragment)))))

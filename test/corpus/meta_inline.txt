@@ -1,0 +1,111 @@
+==================
+Meta with inline title, before narrative
+==================
+Meta: @Issue ABC-123
+
+Narrative:
+As a system
+I want things
+
+Scenario: dummy
+Given a step
+
+---
+
+(source_file
+  (meta
+    (meta_kw)
+    (title))
+  (narrative
+    (narrative_kw)
+    (free_text
+      (free_text_line)
+      (free_text_line)))
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (step
+      (step_keyword (given_kw))
+      (step_text (step_text_fragment)))))
+
+==================
+Meta block before narrative
+==================
+Meta:
+@Issue ABC-123
+
+Narrative:
+As a system
+I want things
+
+---
+
+(source_file
+  (meta
+    (meta_kw)
+    (meta_line
+      (tag (tag_name) (tag_value))))
+  (narrative
+    (narrative_kw)
+    (free_text
+      (free_text_line)
+      (free_text_line))))
+
+==================
+Inline meta followed by block tag lines
+==================
+Meta: @Issue ABC-123
+@priority high
+
+Scenario: dummy
+Given a step
+
+---
+
+(source_file
+  (meta
+    (meta_kw)
+    (title)
+    (meta_line
+      (tag (tag_name) (tag_value))))
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (step
+      (step_keyword (given_kw))
+      (step_text (step_text_fragment)))))
+
+==================
+Meta with no tags inside a scenario
+==================
+Scenario: Scenario with inline meta and table
+Meta:
+Given the following items exist in stock:
+| Item     | Count |
+| 1337     | 42    |
+When the stock is ordered for item 1337
+Then should the result be "OK"
+
+---
+
+(source_file
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (meta
+      (meta_kw))
+    (step
+      (step_keyword (given_kw))
+      (step_text (step_text_fragment))
+      (table_row
+        (table_cell (table_cell_fragment))
+        (table_cell (table_cell_fragment)))
+      (table_row
+        (table_cell (table_cell_fragment))
+        (table_cell (table_cell_fragment))))
+    (step
+      (step_keyword (when_kw))
+      (step_text (step_text_fragment)))
+    (step
+      (step_keyword (then_kw))
+      (step_text (step_text_fragment)))))

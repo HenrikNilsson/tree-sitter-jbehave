@@ -1,0 +1,20 @@
+==================
+Narrative with only inline content, no free-text body
+==================
+Narrative: A plain narrative with no body
+
+Scenario: dummy
+Given a step
+
+---
+
+(source_file
+  (narrative
+    (narrative_kw)
+    (title))
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (step
+      (step_keyword (given_kw))
+      (step_text (step_text_fragment)))))

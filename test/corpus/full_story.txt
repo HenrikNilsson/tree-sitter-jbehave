@@ -1,0 +1,80 @@
+==================
+Full story combining all sections
+==================
+Narrative:
+As a user
+I want to do something
+So that I benefit
+
+Meta:
+@tag1 value1
+@tag2
+
+GivenStories: story1.story, story2.story
+
+Scenario: My first scenario
+Meta:
+@scenariotag
+
+Given a precondition
+When an action $param happens
+Then an outcome occurs
+And another outcome occurs
+
+Examples:
+|col1|col2|
+|val1|$val2|
+
+Scenario: Adversarial narrative check
+Given the above context, proceed.
+When something else
+Then done
+
+---
+
+(source_file
+  (narrative
+    (narrative_kw)
+    (free_text
+      (free_text_line)
+      (free_text_line)
+      (free_text_line)))
+  (meta
+    (meta_kw)
+    (meta_line
+      (tag (tag_name) (tag_value)))
+    (meta_line
+      (tag (tag_name))))
+  (given_stories
+    (given_stories_kw)
+    (story_ref_list
+      (story_ref)
+      (story_ref)))
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (meta
+      (meta_kw)
+      (meta_line
+        (tag (tag_name))))
+    (step (step_keyword (given_kw)) (step_text (step_text_fragment)))
+    (step
+      (step_keyword (when_kw))
+      (step_text (step_text_fragment) (parameter) (step_text_fragment)))
+    (step (step_keyword (then_kw)) (step_text (step_text_fragment)))
+    (step (step_keyword (and_kw)) (step_text (step_text_fragment)))
+    (examples
+      (examples_kw)
+      (examples_table
+        (table_row
+          (table_cell (table_cell_fragment))
+          (table_cell (table_cell_fragment)))
+        (table_row
+          (table_cell (table_cell_fragment))
+          (table_cell (parameter))))))
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (step (step_keyword (given_kw)) (step_text (step_text_fragment)))
+    (step (step_keyword (when_kw)) (step_text (step_text_fragment)))
+    (step (step_keyword (then_kw)) (step_text (step_text_fragment)))))

@@ -1,0 +1,22 @@
+==================
+Scenario with per-scenario meta
+==================
+Scenario: tagged scenario
+Meta:
+@owner team-a
+
+Given a step
+
+---
+
+(source_file
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (meta
+      (meta_kw)
+      (meta_line
+        (tag (tag_name) (tag_value))))
+    (step
+      (step_keyword (given_kw))
+      (step_text (step_text_fragment)))))

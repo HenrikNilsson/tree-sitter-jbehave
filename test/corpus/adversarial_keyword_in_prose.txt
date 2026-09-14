@@ -1,0 +1,36 @@
+==================
+Keyword-like word inside narrative prose
+==================
+Narrative:
+As a user
+Given the above context, proceed with caution.
+When in doubt, ask.
+So that I benefit
+
+Scenario: Real scenario
+Given a real precondition
+When a real action happens
+Then a real outcome occurs
+
+---
+
+(source_file
+  (narrative
+    (narrative_kw)
+    (free_text
+      (free_text_line)
+      (free_text_line)
+      (free_text_line)
+      (free_text_line)))
+  (scenario
+    (scenario_kw)
+    title: (title)
+    (step
+      (step_keyword (given_kw))
+      (step_text (step_text_fragment)))
+    (step
+      (step_keyword (when_kw))
+      (step_text (step_text_fragment)))
+    (step
+      (step_keyword (then_kw))
+      (step_text (step_text_fragment)))))
