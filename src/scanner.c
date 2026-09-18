@@ -423,6 +423,7 @@ bool tree_sitter_jbehave_external_scanner_scan(void *payload, TSLexer *lexer, co
         continue;
       }
       if (lexer->eof(lexer)) {
+        if (!saw_newline) return false;
         lexer->mark_end(lexer);
         lexer->result_symbol = EOL;
         state->last_is_header = false;
@@ -442,6 +443,7 @@ bool tree_sitter_jbehave_external_scanner_scan(void *payload, TSLexer *lexer, co
               lexer->advance(lexer, false);
             }
             if (lexer->eof(lexer)) {
+              if (!saw_newline) return false;
               lexer->mark_end(lexer);
               lexer->result_symbol = EOL;
               state->last_is_header = false;
